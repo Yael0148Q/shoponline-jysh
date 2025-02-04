@@ -1,4 +1,4 @@
-import {Component } from '@angular/core';
+import {Component, OnInit  } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
@@ -6,18 +6,23 @@ import { NavbarComponent } from "./componentes/navbar/navbar.component";
 import { ModprimengModule } from './modprimeng.module';
 import { MessageService } from 'primeng/api';
 import { AvatarModule } from 'primeng/avatar';
+import { MegaMenuItem } from 'primeng/api';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ToolbarComponent } from "./componentes/toolbar/toolbar.component";
+
+
 
 
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, ButtonModule, RippleModule, NavbarComponent, ModprimengModule, AvatarModule],
+    imports: [RouterOutlet, ButtonModule, RippleModule, NavbarComponent, ModprimengModule, AvatarModule, ToolbarModule, ToolbarComponent],
     providers: [MessageService],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     standalone: true
 })
-export class AppComponent {
+export class AppComponent{
     title = 'shoponline_jysh';
     visible: boolean = false;
 
@@ -51,6 +56,7 @@ export class AppComponent {
         this.messageService.clear('confirm');
         this.visible = false;
     }
+    
 }
 
 
